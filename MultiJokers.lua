@@ -1,8 +1,8 @@
 --- STEAMODDED HEADER
 --- MOD_NAME: MultiJokersMod
 --- MOD_ID: MultiJokersMod
---- MOD_AUTHOR: [John Maged, Multi]
---- MOD_DESCRIPTION: Adds a couple of custom jokers and mechanics to the game.
+--- MOD_AUTHOR: [John Maged, Multi, GoldenEpsilon]
+--- MOD_DESCRIPTION: Adds a couple of custom jokers to the game.
 
 ----------------------------------------------
 ------------MOD CODE -------------------------
