@@ -129,13 +129,14 @@ function SMODS.INIT.MultiJokersMod()
         set = "Joker",
         config = {
             extra = {
-                x_mult = 1
+                x_mult = 1,
+                increment = 0.1
             },
         },
     }, {
         name = "Incremental Joker",
         text = {
-            "Gains {X:mult,C:white}X0.1{} Mult",
+            "Gains {X:mult,C:white}X#2#{} Mult",
             "at end of round",
             "{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive})"
         }
@@ -260,7 +261,7 @@ function Card:calculate_joker(context)
             elseif context.repetition then
             elseif not context.blueprint then
                 if self.ability.name == 'Incremental Joker' then
-                    self.ability.extra.x_mult = self.ability.extra.x_mult + 0.1
+                    self.ability.extra.x_mult = self.ability.extra.x_mult + self.ability.extra.increment
                     return {
                         message = localize('k_upgrade_ex'),
                         colour = G.C.RED
@@ -311,7 +312,7 @@ function Card:generate_UIBox_ability_table()
     local loc_vars = nil
 
     if self.ability.name == 'Incremental Joker' then
-        loc_vars = { self.ability.extra.x_mult }
+        loc_vars = { self.ability.extra.x_mult, self.ability.extra.increment }
     end
     if self.ability.name == "Collector's Item" then
         if G.GAME[MOD_ID .. "unique_jokers_owned"] then
