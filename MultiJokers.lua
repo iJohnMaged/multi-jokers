@@ -135,9 +135,9 @@ function SMODS.INIT.MultiJokersMod()
     }, {
         name = "Incremental Joker",
         text = {
-            "{C:red}x1{} Mult gains {C:red}x0.1{}",
+            "Gains {X:mult,C:white}X0.1{} Mult",
             "at end of round",
-            "{C:inactive}(Currently {C:red}x#1#{C:inactive})"
+            "{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive})"
         }
     });
 
