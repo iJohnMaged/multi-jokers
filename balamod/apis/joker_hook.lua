@@ -42,7 +42,7 @@ function initJokerHook()
         --add it to all the game tables
         table.insert(G.P_CENTER_POOLS["Joker"], newJoker)
         G.P_CENTERS[id] = newJoker
-        table.insert(G.P_JOKER_RARITY_POOLS[1], newJoker)
+        table.insert(G.P_JOKER_RARITY_POOLS[rarity], newJoker)
         --table.insert(G.shop_jokers, newJoker)
     
         --add name + description to the localization object
@@ -50,10 +50,13 @@ function initJokerHook()
         for _, line in ipairs(desc) do
             newJokerText.text_parsed[#newJokerText.text_parsed+1] = loc_parse_string(line)
         end
+
         for _, line in ipairs(type(newJokerText.name) == 'table' and newJokerText.name or {newJoker.name}) do
             newJokerText.name_parsed[#newJokerText.name_parsed+1] = loc_parse_string(line)
         end
+        
         G.localization.descriptions.Joker[id] = newJokerText
+
         return newJoker, newJokerText
     end
 
